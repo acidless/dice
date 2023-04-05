@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+
+    color: var(--text--color);
+}
+
+html {
+    font-size: 10px;
+    font-family: sans-serif;
+
+    --background: #181818;
+    --text--color: #fff;
+    --main: #022cb4;
+    --main--darken: #02279b;
+}
+
+.app-container {
+    min-height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    padding: 5em;
+    background: var(--background);
+}
+
+h1 {
+    font-size: 10rem;
+    text-align: center;
+    font-family: serif;
+    margin-bottom: 1em;
+}
+
+h3 {
+    font-size: 2rem;
+    margin-bottom: 0.5em;
+}
+
+h2{
+    font-size: 4rem;
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+button {
+    background: var(--main);
+    border: none;
+    font-size: 1.5rem;
+    padding: 1em 4em;
+    border-radius: 1em;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+    transition: 0.3s background, 0.3s transform ease-in-out;
+
+    -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+}
+
+button:hover {
+    background: var(--main--darken);
+    transform: scale(0.95);
+}
+
+.players {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10em;
+    margin-bottom: 5em;
+}
+
+.dice {
+    width: 30em;
+    height: 30em;
+    background: var(--main);
+    border-radius: 3rem;
+    display: flex;
+    padding: 1em;
+}
+
+.dice-1 {
+    justify-content: center;
+    align-items: center;
+}
+
+.dice-2 .dot:nth-child(2) {
+    align-self: flex-end;
+    margin-left: auto;
+}
+
+.dice-3 {
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.dice-3 .dot:first-child {
+    align-self: flex-end;
+}
+
+.dice-3 .dot:last-child {
+    align-self: flex-start;
+}
+
+.dice-4, .dice-5, .dice-6 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    position: relative;
+}
+
+.dice-4 .dot:nth-child(2n), .dice-5 .dot:nth-child(2n), .dice-6 .dot:nth-child(2n) {
+    justify-self: flex-end;
+}
+
+.dice-4 .dot:last-child, .dice-4 .dot:nth-child(3), .dice-5 .dot:nth-child(3), .dice-5 .dot:nth-child(4),
+.dice-6 .dot:last-child, .dice-6 .dot:nth-child(5)
+{
+    align-self: flex-end;
+}
+
+.dice-5 .dot:nth-child(5){
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.dot {
+    width: 7rem;
+    height: 7rem;
+    border-radius: 100%;
+    background: #fff;
+}
+
+@media screen and (max-width:800px){
+    .players{
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width:400px){
+    html{
+        font-size: 8px;
+    }
+}
