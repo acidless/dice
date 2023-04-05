@@ -29,6 +29,18 @@ function onThrow() {
     appendDot(firstDice, firstNumber);
     appendDot(secondDice, secondNumber);
 
+    firstDice.animate(
+        [{transform: "rotateZ(0deg)"}, {transform: "rotateZ(20deg)"}, {transform: "rotateZ(0deg)"}],
+        {
+            duration: 100,
+        })
+
+    secondDice.animate(
+        [{transform: "rotateZ(0deg)"}, {transform: "rotateZ(20deg)"}, {transform: "rotateZ(0deg)"}],
+        {
+            duration: 100,
+        })
+
     const gameResult = document.querySelector("#game-result")
     if (firstNumber > secondNumber) {
         gameResult.textContent = "1st Player Won!"
